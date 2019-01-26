@@ -1,0 +1,14 @@
+array where index = x values and elements = y values
+
+1)  subtract the y intercept (y intercept = y value @ x=0) from each y value to make a new array
+
+2)  divide every y value by the coefficient (coefficient = new y value @ x=1) to make a new array
+
+3)  If (y@x=2) and is not an integar:
+       If (y@x=2) < 1
+           make exponent negative, now use 1/(y@x=2) instead of y@x=2
+       multiply y@x=2 by itself until it is an integar, each time adding 1 to the denominator of the exponent 
+    
+    divide new y@x=2 by 2 until it equals 1, each time adding 1 to the numerator of the exponent
+    
+4)  Final equation: y = (coefficient)*x^(exponent) + (y intercept)
