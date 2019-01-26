@@ -1,0 +1,22 @@
+# To change this license header, choose License Headers in Project Properties.
+# To change this template file, choose Tools | Templates
+# and open the template in the editor.
+
+__author__ = "mia"
+__date__ = "$Jan 25, 2019 12:53:39 AM$"
+
+# file variable reads testfile
+file = open("testfile", "r")
+
+# initialized empty array content
+content = []
+
+# for loop to read all elements as int
+for val in file.read().split():
+    content.append(int(val))
+
+# closes file
+file.close()
+
+for x in range(len(content)):
+    print(content[x])
