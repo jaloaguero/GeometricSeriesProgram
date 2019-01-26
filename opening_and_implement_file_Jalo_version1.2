@@ -1,0 +1,23 @@
+#SAME THING AS YOURS BUT JUST ADDED SORT() METHOD
+
+__author__ = "mia"
+__date__ = "$Jan 25, 2019 12:53:39 AM$"
+
+# file variable reads testfile
+file = open("textfile.txt", "r")
+
+# initialized empty array content
+content = []
+
+# for loop to read all elements as int
+for val in file.read().split():
+    content.append(int(val))
+
+# closes file
+file.close()
+
+#sorts file lmao
+content.sort()
+
+for x in range(len(content)):
+    print(content[x])
