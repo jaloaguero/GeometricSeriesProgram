@@ -155,7 +155,9 @@ output = Label(next, text = "Final equation " + teststr)
 output.pack()
 
 # same as above
-output1 = Label(next, text = "Let's break this down")
+output1 = Label(next, text = "Let's break this down and figure out\n"
+                             "what each component of an equation in the form y = ax^n + b means\n"
+                             "and how to find this using simple algebra and logarithms")
 output1.pack()
 
 # these are the commands of the buttons when pressed
