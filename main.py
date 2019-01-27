@@ -181,7 +181,6 @@ output2 = Label(next, text=full_string)
 
 full_string = "What is the y intercept?"
 
-
 output3 = Label(next, text = full_string)
 
 # declares the second button like the first one
@@ -244,7 +243,7 @@ Button4 = Button(next, text="next", command=ButtonCommand4)
 
 def compareAnswers2(UI): #the marching orders for the input
     UGInput = float(UserGuess2.get()) #gets and stores user input
-    if y_int != UGInput: #checks if the user is correct
+    if coefficient != UGInput: #checks if the user is correct
         full_string = "That answer was incorect."
         IncorrectMessage2 = Label(next, text = full_string) #prints if answer is incorrect
         IncorrectMessage2.pack()
@@ -260,7 +259,7 @@ UserGuess2.bind('<Return>', compareAnswers2)
 
 def compareAnswers3(UI): #the marching orders for the input
     UGInput = float(UserGuess3.get()) #gets and stores user input
-    if y_int != UGInput: #checks if the user is correct
+    if power != UGInput: #checks if the user is correct
         full_string = "That answer was incorect."
         IncorrectMessage3 = Label(next, text = full_string) #prints if answer is incorrect
         IncorrectMessage3.pack()
