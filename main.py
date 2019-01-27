@@ -4,7 +4,6 @@
 # To change this template file, choose Tools | Templates
 # and open the template in the editor.
 
-#
 # solves all equations with one instance of x^n
 
 import math
@@ -138,37 +137,59 @@ else:
 
 #========================================================================
 
-next = Tk() #name and declaring of gui window
+# name and declaring of gui window
+next = Tk()
 
-output = Label(next, text = "Final equation " + teststr) #creates a "label", a text box that cannot be interacted with
-output.pack() #this will put the label named 'output' on the window
+# creates a "label", a text box that cannot be interacted with
+output = Label(next, text = "Final equation " + teststr)
+# this will put the label named 'output' on the window
+output.pack()
 
-output1 = Label(next, text = "Let's break this down") #same as above
+# same as above
+output1 = Label(next, text = "Let's break this down")
 output1.pack()
 
-def ButtonCommand1(): #these are the commands of the buttons when pressed
-    output2.pack()  #this will "print" the output on the window
-    Button2.pack()  #this will display the new button
+# these are the commands of the buttons when pressed
+def ButtonCommand1():
+    # this will "print" the output on the window
+    output2.pack()
+    # this will display the new button
+    Button2.pack()
 
+# same but for the second button
+def ButtonCommand2():
+    # displays output
+    output3.pack()
 
-def ButtonCommand2():   #same but for the second buton
-    output3.pack()      #displays output
+# declares a button, the text of what the button will say, and the command is the function above
+Button1 = Button(next, text= "next", command=ButtonCommand1)
 
+# displays button
+Button1.pack()
 
-Button1 = Button(next, text= "next", command=ButtonCommand1) #declares a button, the text of what the button will say, and the command is the function above
-Button1.pack() #displays button
+# full_string variable explains y intercept
+full_string = "To find the y intercept:\n" \
+              "The y intercept is the point where the line/curve crosses the y axis.\n" \
+              "The y-intercept is the y-value at x = 0. It is a constant that can raise or lower the curve/line" + \
+              "Subtract the y-intercept from each y-value.\n" \
+              "After you complete this, click next"
 
-output2 = Label(next, text="new shit lmao") #the declared strings
-output3 = Label(next, text = "wewlad")
+# the declared strings
+output2 = Label(next, text=full_string)
 
-Button2 = Button(next, text= "next", command=ButtonCommand2) #declares the second button like the first one
+# full_string now holds explanation of coefficients
+full_string = "Next, we find the coefficient.\n" \
+              "We can determine the coefficient of this equation is the new y-value at x = 1. " \
+              "This is because a*1^n for any n equals a.\nDivide every y-value by the coefficient\n"
 
+output3 = Label(next, text = full_string)
 
+# declares the second button like the first one
+Button2 = Button(next, text= "next", command=ButtonCommand2)
 
-
-next.mainloop() #signifies the end of the gui interface
+# signifies the end of the gui interface
+next.mainloop()
 
 #========================================================================
-
 
 print("fin")
