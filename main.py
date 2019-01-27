@@ -7,11 +7,10 @@
 # solves all equations with one instance of x^n
 
 import math
-
 from tkinter import *
 
-# __author__ = "jalo"
-# __date__ = "$Jan 26, 2019 - Jan 27, 2019"
+__author__ = "jalo & mia"
+__date__ = "$Jan 26, 2019 - Jan 27, 2019"
 
 # file variable writes to UserNumber
 file = open("UserNumber", "w+")
@@ -42,9 +41,6 @@ master.mainloop()
 file.close()
 
 #=================================================================
-
-# __author__ = "mia"
-# __date__ = "$Jan 26, 2019 - Jan 27, 2019"
 
 # file variable reads UserNumber
 file = open("UserNumber", "r")
