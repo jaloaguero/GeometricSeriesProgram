@@ -1,5 +1,5 @@
 # TAMUhack2019 Project
-Takes numbers, sorts them and finds a pattern to then form an equation.
+Takes numbers　and finds a pattern to then form an equation.
 
 Please label whatever you do with a version number, so we know what is the most recent one.
 
