@@ -1,6 +1,6 @@
 1)  find the y-intercept of the equation, the point where the line or curve crosses the y-axis.
         The y-intercept is the y-value at x = 0. It is a constant that can raise or lower the curve/line
-        Subtract the y-intercept from each y-value
+        Subtract the y-intercept from each y-value so the intercept is now at y = 0. This will make it easier to find the other components of the equation.
         
 2)  Find the coefficient multiplying x
         The coefficient is the new y-value at x = 1. This is because a*1^n for any n equals a
