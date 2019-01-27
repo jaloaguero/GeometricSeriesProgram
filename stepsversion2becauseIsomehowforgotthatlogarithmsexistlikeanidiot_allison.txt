@@ -1,0 +1,9 @@
+array where index = x values and elements = y values
+
+1)  subtract the y intercept (y intercept = y value @ x=0) from each y value to make a new array
+
+2)  divide every y value by the coefficient (coefficient = new y value @ x=1) to make a new array
+
+3)  exponent = log_2(y@x=2)
+    
+4)  Final equation: y = (coefficient)*x^(exponent) + (y intercept)
