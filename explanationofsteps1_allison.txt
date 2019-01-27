@@ -1,0 +1,12 @@
+1)  find the y-intercept of the equation, the point where the line or curve crosses the y-axis.
+        The y-intercept is the y-value at x = 0. It is a constant that can raise or lower the curve/line
+        Subtract the y-intercept from each y-value
+        
+2)  Find the coefficient multiplying x
+        The coefficient is the new y-value at x = 1. This is because a*1^n for any n equals a
+        Divide every y-value by the coefficient
+        
+3)  Find the exponent on x, the power that x is raised to.
+        For an equation x^n = y, log_x(y) = n, so the exponent equals log base 2 of the y-value at x = 2. 
+        
+4)  The final equation is: y = (coefficient)*x^(exponent) + (y intercept)
