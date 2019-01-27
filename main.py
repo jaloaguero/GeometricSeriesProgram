@@ -179,36 +179,39 @@ full_string = "To find the y intercept:\n" \
 # the declared strings
 output2 = Label(next, text=full_string)
 
+full_string = "What is the y intercept?"
 # full_string now holds explanation of coefficients
-full_string = "Next, we find the coefficient.\n" \
-              "We can determine the coefficient of this equation is the new y-value at x = 1. " \
-              "This is because a*1^n for any n equals a.\nDivide every y-value by the coefficient\n"
+#full_string = "Next, we find the coefficient.\n" \
+#              "We can determine the coefficient of this equation is the new y-value at x = 1. " \
+#              "This is because a*1^n for any n equals a.\nDivide every y-value by the coefficient\n"
 
 output3 = Label(next, text = full_string)
 
 # declares the second button like the first one
 Button2 = Button(next, text= "next", command=ButtonCommand2)
 
+#=====================================================================
+def ButtonCommand3():  #For the 3rd Button
+    print("PUT MORE SHIT HERE")
 
-UserGuess = Entry(next)
+UserGuess = Entry(next) #Declaring an input for the GUI
 
-def compareAnswers(UI):
-    UGInput = float(UserGuess.get())
-    if y_int != UGInput:
-        print("incorrect")
-        print(y_int)
-        print(UGInput)
+Button3 = Button(next, text="next", command=ButtonCommand3) #declares button3
+
+def compareAnswers(UI): #the marching orders for the input
+    UGInput = float(UserGuess.get()) #gets and stores user input
+    if y_int != UGInput: #checks if the user is correct
         full_string = "That answer was incorect."
-        IncorrectMessage = Label(next, text = full_string)
+        IncorrectMessage = Label(next, text = full_string) #prints if answer is incorrect
         IncorrectMessage.pack()
-
+    else:
+        Button3.pack() #else, displays button to keep going with the program
 
     #next.destroy() PROLLY WONT NEED IT
 
 
-UserGuess.bind('<Return>', compareAnswers)
+UserGuess.bind('<Return>', compareAnswers) #this is to know when the user presses enter they go to the compareAnswers function
 
-master.mainloop()
 
 # signifies the end of the gui interface
 next.mainloop()
