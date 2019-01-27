@@ -180,10 +180,7 @@ full_string = "To find the y intercept:\n" \
 output2 = Label(next, text=full_string)
 
 full_string = "What is the y intercept?"
-# full_string now holds explanation of coefficients
-#full_string = "Next, we find the coefficient.\n" \
-#              "We can determine the coefficient of this equation is the new y-value at x = 1. " \
-#              "This is because a*1^n for any n equals a.\nDivide every y-value by the coefficient\n"
+
 
 output3 = Label(next, text = full_string)
 
@@ -191,8 +188,22 @@ output3 = Label(next, text = full_string)
 Button2 = Button(next, text= "next", command=ButtonCommand2)
 
 #=====================================================================
+
+# full_string now holds explanation of coefficients
+full_string = "Next, we find the coefficient.\n" \
+              "We can determine the coefficient of this equation is the new y-value at x = 1. " \
+              "This is because a*1^n for any n equals a.\nDivide every y-value by the coefficient\n"
+
+output4 = Label(next, text = full_string)
+
+full_string = "What is the coefficient?"
+
+output5 = Label(next, text = full_string)
+
 def ButtonCommand3():  #For the 3rd Button
-    print("PUT MORE SHIT HERE")
+    output4.pack()
+    output5.pack()
+    UserGuess2.pack()
 
 UserGuess = Entry(next) #Declaring an input for the GUI
 
@@ -212,9 +223,61 @@ def compareAnswers(UI): #the marching orders for the input
 
 UserGuess.bind('<Return>', compareAnswers) #this is to know when the user presses enter they go to the compareAnswers function
 
+#==================================================================================
+full_string = "Find the exponent on x, the power that x is raised to. A logarithm is used to find what exponent a number needs to be raised to, to get another known number. For an equation x^n = y, log_x(y) = n, so the exponent equals log base 2 of the y-value at x = 2."
 
+output6 = Label(next, text = full_string)
+
+full_string = "What is the Exponent on x?"
+output7 = Label(next, text= full_string)
+
+UserGuess2 = Entry(next) #Declaring an input for the GUI
+
+def ButtonCommand4():  #For the 3rd Button
+    output6.pack()
+    output7.pack()
+    UserGuess3.pack()
+
+UserGuess3 = Entry(next) #Declaring an input for the GUI
+
+Button4 = Button(next, text="next", command=ButtonCommand4)
+
+def compareAnswers2(UI): #the marching orders for the input
+    UGInput = float(UserGuess2.get()) #gets and stores user input
+    if y_int != UGInput: #checks if the user is correct
+        full_string = "That answer was incorect."
+        IncorrectMessage2 = Label(next, text = full_string) #prints if answer is incorrect
+        IncorrectMessage2.pack()
+    else:
+        Button4.pack() #else, displays button to keep going with the program
+
+    #next.destroy() PROLLY WONT NEED IT
+
+
+UserGuess2.bind('<Return>', compareAnswers2)
+
+#========================================================================
+
+def compareAnswers3(UI): #the marching orders for the input
+    UGInput = float(UserGuess3.get()) #gets and stores user input
+    if y_int != UGInput: #checks if the user is correct
+        full_string = "That answer was incorect."
+        IncorrectMessage3 = Label(next, text = full_string) #prints if answer is incorrect
+        IncorrectMessage3.pack()
+    else:
+        Button5.pack() #else, displays button to keep going with the program
+
+    #next.destroy() PROLLY WONT NEED IT
+
+
+UserGuess3.bind('<Return>', compareAnswers3)
+
+Button5 = Button(next, text="Congrats! You Did it!")
+
+
+
+#=======================================================================
 # signifies the end of the gui interface
 next.mainloop()
-#========================================================================
 
 print("fin")
