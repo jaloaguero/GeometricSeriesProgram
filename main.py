@@ -138,44 +138,37 @@ else:
 
 #========================================================================
 
-next = Tk()
+next = Tk() #name and declaring of gui window
 
-output = Label(next, text = "Final equation " + teststr)
-output.pack()
+output = Label(next, text = "Final equation " + teststr) #creates a "label", a text box that cannot be interacted with
+output.pack() #this will put the label named 'output' on the window
 
-output1 = Label(next, text = "Let's break this down")
+output1 = Label(next, text = "Let's break this down") #same as above
 output1.pack()
 
-def ButtonCommand1():
-    output2.pack()
-    Button2.pack()
+def ButtonCommand1(): #these are the commands of the buttons when pressed
+    output2.pack()  #this will "print" the output on the window
+    Button2.pack()  #this will display the new button
 
 
-def ButtonCommand2():
-    output3.pack()
+def ButtonCommand2():   #same but for the second buton
+    output3.pack()      #displays output
 
 
-Button1 = Button(next, text= "next", command=ButtonCommand1)
-Button1.pack()
+Button1 = Button(next, text= "next", command=ButtonCommand1) #declares a button, the text of what the button will say, and the command is the function above
+Button1.pack() #displays button
 
-output2 = Label(next, text="new shit lmao")
+output2 = Label(next, text="new shit lmao") #the declared strings
 output3 = Label(next, text = "wewlad")
 
-Button2 = Button(next, text= "next", command=ButtonCommand2)
+Button2 = Button(next, text= "next", command=ButtonCommand2) #declares the second button like the first one
 
 
 
 
-next.mainloop()
+next.mainloop() #signifies the end of the gui interface
 
 #========================================================================
 
-# next1 = Tk()
-#
-# output = Label(next1, text = "To find the y intercept\n" + y_int)
-# output.pack()
-#
-# next1.mainloop()
-# next1.destroy()
 
 print("fin")
