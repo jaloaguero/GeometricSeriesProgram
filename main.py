@@ -1,10 +1,15 @@
+import math
+from fractions import Fraction
+
 from tkinter import *
+
+#SMALL BUG:: to continue the project, enter your numbers, press enter, then close the window. the program will continue after being closed.
 
 file = open("UserNumber", "w+")
 
 master = Tk()
 
-output = Label(master,text = "please enter pattern numbers seperated by spaces")
+output = Label(master,text = "please enter pattern numbers seperated by spaces. When you are done typing in your numbers, press Enter.")
 output.pack()
 
 UserInput = Entry(master)
@@ -14,8 +19,7 @@ def setToArray(UI):
     UINum = UserInput.get()
     #print(UINum)
     file.write(UINum)
-
-
+    master.quit()
 
 
 UserInput.bind('<Return>', setToArray)
@@ -43,7 +47,6 @@ for val in file.read().split():
 file.close()
 
 # y_int variable for y intercept of the equation
-# intercept is found where x = 0 (array[0] = y_int
 y_int = 1
 y_int = content[0]
 
@@ -64,46 +67,60 @@ print("The coefficient is " + str(coefficient))
 for x in range(len(content)):
     content[x] = float(content[x] / coefficient)
 
-# CHECK IF CONTENT[2] IS NOT AN INTEGER
-# EXPONENT WILL BE NEGATIVE
-
-# flag variable holds t/f if content[2] is an integer
-flag: bool = (content[2]).is_integer()
-# temp holds content[2]
-temp = content[2]
-# variable denominator created
-denominator = 1
-# variable numerator created
-numerator = 0
-
-# if exponent is not whole # or is < 0
-
 power = 0
 
-if not flag:
-    # exponent is negative
-    if content[2] < 1:
-        content[2] = float(1 / content[2])
-        power = -1
-        print("power = " + str(power))
+power = math.log(content[2], 2)
+i = 1
+temp = power
 
-    temp = content[2]
+while not round(power * i, 2).is_integer():
+    i += 1
+    temp = power * i
 
-    # if exponent is not a whole number
-    while not temp.is_integer():
-        temp = temp * content[2]
-        denominator += 1
-        print("temp = " + str(temp) + " d =" + str(denominator))
+print(str(round(temp, 2)) + "/" + str(i))
 
-# finding numerator
-while not temp == 1:
-    temp = temp / 2
-    numerator += 1
+# checks the coefficient
+if coefficient == 1:
+    print("y = " + "x", end = "")
+elif coefficient == -1:
+    print("y = -" + "x", end = "")
+elif coefficient.is_integer():
+    print("y = " + str(int(coefficient)) + "x", end = "")
+else:
+    print("y = " + str(coefficient) + "x", end = "")
 
-print("numerator = " + str(numerator))
+# checks the exponent
+if temp == 1:
+    print(" ", end = "")
+elif temp.is_integer():
+    print("^" + str(int(temp)) + " ", end = "")
+else:
+    print("^(" + str(int(round(temp, 2))) + "/" + str(i) + ") ", end = "")
 
-power *= numerator
+# checks the y intercept
+if y_int == 0:
+    print()
+elif y_int < 0 & y_int.is_integer():
+    print("- " + str(int(-1 * y_int)))
+elif y_int < 0 & (not y_int.is_integer()):
+    print("- " + str(-1 * y_int))
+elif y_int.is_integer():
+    print("+ " + str(int(y_int)))
+else:
+    print("+ " + str(y_int))
 
-print("The exponent is " + str(power))
+#========================================================================
 
-print("Final equation y = " + str(coefficient) + "x")
+next = Tk()
+
+
+ou2 = Label(next, text = "Final equation y = " + str(coefficient) + "x")
+ou2.pack()
+
+ou3 = Label(next, text = "lets break this down")
+ou3.pack()
+
+
+next.mainloop()
+
+print("fin")
