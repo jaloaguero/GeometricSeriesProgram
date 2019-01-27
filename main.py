@@ -20,7 +20,7 @@ file = open("UserNumber", "w+")
 master = Tk()
 
 # output is initialized as Label, which prompts user to input 3 numbers and press Enter
-output = Label(master, text = "Please enter 3 pattern numbers separated by spaces. "
+output = Label(master, text = "Please enter three numbers separated by spaces. "
                               "When you are done typing in your numbers, press Enter.")
 
 # packs the widgets in a organized manner
@@ -57,6 +57,7 @@ for val in file.read().split():
     # takes file elements and saves into array content
     content.append(float(val))
 
+original = content[:]
 # closes file
 file.close()
 
@@ -140,6 +141,14 @@ else:
 # name and declaring of gui window
 next = Tk()
 
+output0 = Label(next, text = "Your coordinates are:")
+output0.pack()
+
+for x in range(len(original)):
+    coordinates = Label(next, text="(" + str(x) + ", " + str(int(original[x])) + ")")
+    coordinates.pack()
+
+
 # creates a "label", a text box that cannot be interacted with
 output = Label(next, text = "Final equation " + teststr)
 # this will put the label named 'output' on the window
@@ -172,8 +181,10 @@ Button1.pack()
 # full_string variable explains y intercept
 full_string = "To find the y intercept:\n" \
               "The y intercept is the point where the line/curve crosses the y axis.\n" \
-              "The y-intercept is the y-value at x = 0. It is a constant that can raise or lower the curve/line" + \
-              "Subtract the y-intercept from each y-value.\n" \
+              "The y-intercept is the y-value at x = 0.\n" \
+              "It is a constant that can raise or lower the curve/line.\n" + \
+              "Subtract the y-intercept from each y-value so the intercept is now at y = 0.\n" \
+              "This will make it easier to find the other components of the equation.\n"\
               "After you complete this, click next"
 
 # the declared strings
@@ -190,8 +201,9 @@ Button2 = Button(next, text= "next", command=ButtonCommand2)
 
 # full_string now holds explanation of coefficients
 full_string = "Next, we find the coefficient.\n" \
-              "We can determine the coefficient of this equation is the new y-value at x = 1. " \
-              "This is because a*1^n for any n equals a.\nDivide every y-value by the coefficient\n"
+              "We can determine the coefficient of this equation is the new y-value at x = 1.\n" \
+              "This is because a*1^n for any n equals a.\n" \
+              "Divide every y-value by the coefficient to simplify the equation so n can be found."
 
 output4 = Label(next, text = full_string)
 
@@ -223,7 +235,9 @@ def compareAnswers(UI): #the marching orders for the input
 UserGuess.bind('<Return>', compareAnswers) #this is to know when the user presses enter they go to the compareAnswers function
 
 #==================================================================================
-full_string = "Find the exponent on x, the power that x is raised to. A logarithm is used to find what exponent a number needs to be raised to, to get another known number. For an equation x^n = y, log_x(y) = n, so the exponent equals log base 2 of the y-value at x = 2."
+full_string = "Find the exponent on x, the power that x is raised to.\n" \
+              "A logarithm is used to find what exponent a number needs to be raised to, to get another known number.\n" \
+              "For an equation x^n = y, log_x(y) = n, so the exponent equals log base 2 of the y-value at x = 2."
 
 output6 = Label(next, text = full_string)
 
@@ -272,8 +286,6 @@ def compareAnswers3(UI): #the marching orders for the input
 UserGuess3.bind('<Return>', compareAnswers3)
 
 Button5 = Button(next, text="Congrats! You Did it!")
-
-
 
 #=======================================================================
 # signifies the end of the gui interface
