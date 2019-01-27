@@ -223,13 +223,11 @@ Button3 = Button(next, text="next", command=ButtonCommand3) #declares button3
 def compareAnswers(UI): #the marching orders for the input
     UGInput = float(UserGuess.get()) #gets and stores user input
     if y_int != UGInput: #checks if the user is correct
-        full_string = "That answer was incorect."
+        full_string = "That answer was incorrect."
         IncorrectMessage = Label(next, text = full_string) #prints if answer is incorrect
         IncorrectMessage.pack()
     else:
         Button3.pack() #else, displays button to keep going with the program
-
-    #next.destroy() PROLLY WONT NEED IT
 
 
 UserGuess.bind('<Return>', compareAnswers) #this is to know when the user presses enter they go to the compareAnswers function
@@ -258,14 +256,11 @@ Button4 = Button(next, text="next", command=ButtonCommand4)
 def compareAnswers2(UI): #the marching orders for the input
     UGInput = float(UserGuess2.get()) #gets and stores user input
     if coefficient != UGInput: #checks if the user is correct
-        full_string = "That answer was incorect."
+        full_string = "That answer was incorrect."
         IncorrectMessage2 = Label(next, text = full_string) #prints if answer is incorrect
         IncorrectMessage2.pack()
     else:
         Button4.pack() #else, displays button to keep going with the program
-
-    #next.destroy() PROLLY WONT NEED IT
-
 
 UserGuess2.bind('<Return>', compareAnswers2)
 
@@ -274,13 +269,11 @@ UserGuess2.bind('<Return>', compareAnswers2)
 def compareAnswers3(UI): #the marching orders for the input
     UGInput = float(UserGuess3.get()) #gets and stores user input
     if power != UGInput: #checks if the user is correct
-        full_string = "That answer was incorect."
+        full_string = "That answer was incorrect."
         IncorrectMessage3 = Label(next, text = full_string) #prints if answer is incorrect
         IncorrectMessage3.pack()
     else:
         Button5.pack() #else, displays button to keep going with the program
-
-    #next.destroy() PROLLY WONT NEED IT
 
 
 UserGuess3.bind('<Return>', compareAnswers3)
