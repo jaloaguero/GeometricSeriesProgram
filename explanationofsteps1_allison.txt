@@ -7,6 +7,6 @@
         Divide every y-value by the coefficient
         
 3)  Find the exponent on x, the power that x is raised to.
-        For an equation x^n = y, log_x(y) = n, so the exponent equals log base 2 of the y-value at x = 2. 
+        A logarithm is used to find what exponent a number needs to be raised to, to get another known number.  For an equation x^n = y,           log_x(y) = n, so the exponent equals log base 2 of the y-value at x = 2. 
         
 4)  The final equation is: y = (coefficient)*x^(exponent) + (y intercept)
